@@ -6,6 +6,6 @@ $app->get('/[{name}]', function ($request, $response, $args) {
     $result = $dataSource->setKind('access_info')
         ->sendRequest()
         ->getResult();
-    var_dump($result);
+    var_dump($result->getEntityResults());
     return $this->renderer->render($response, 'index.phtml', $args);
 });
